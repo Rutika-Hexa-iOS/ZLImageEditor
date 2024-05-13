@@ -147,7 +147,7 @@ open class ZLEditImageViewController: UIViewController {
     open lazy var doneBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.titleLabel?.font = ZLImageEditorLayout.bottomToolTitleFont
-        btn.backgroundColor = .zl.editDoneBtnBgColor
+        btn.backgroundColor = .zl.editDoneBtnBgColor // change this color
         btn.setTitle(localLanguageTextValue(.editFinish), for: .normal)
         btn.setTitleColor(.zl.editDoneBtnTitleColor, for: .normal)
         btn.addTarget(self, action: #selector(doneBtnClick), for: .touchUpInside)
@@ -180,9 +180,9 @@ open class ZLEditImageViewController: UIViewController {
     
     open lazy var editToolCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 30, height: 30)
-        layout.minimumLineSpacing = 20
-        layout.minimumInteritemSpacing = 20
+        layout.itemSize = CGSize(width: 40, height: 40)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
         layout.scrollDirection = .horizontal
         
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -564,7 +564,7 @@ open class ZLEditImageViewController: UIViewController {
         let doneBtnW = localLanguageTextValue(.editFinish).zl.boundingRect(font: ZLImageEditorLayout.bottomToolTitleFont, limitSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: doneBtnH)).width + 20
         doneBtn.frame = CGRect(x: view.zl.width - 20 - doneBtnW, y: toolY - 2, width: doneBtnW, height: doneBtnH)
         
-        editToolCollectionView.frame = CGRect(x: 20, y: toolY, width: view.zl.width - 20 - 20 - doneBtnW - 20, height: 30)
+        editToolCollectionView.frame = CGRect(x: 20, y: toolY, width: view.zl.width - 20 - 20 - doneBtnW - 20, height: 40)
         
         if !drawPaths.isEmpty {
             drawLine()

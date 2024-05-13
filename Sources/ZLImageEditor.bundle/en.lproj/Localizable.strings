@@ -1,6 +1,7 @@
 "cancel" = "Cancel";
 "done" = "Done";
-"editFinish" = "Done";
+//"editFinish" = "Done";
+"editFinish" = "Continue";
 "revert" = "Undo";
 "brightness" = "Brightness";
 "contrast" = "Contrast";

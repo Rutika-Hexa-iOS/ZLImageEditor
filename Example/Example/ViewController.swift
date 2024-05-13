@@ -220,6 +220,8 @@ class ViewController: UIViewController {
         
         ZLImageEditorConfiguration.default()
             // Provide a image sticker container view
+        
+            .editImageTools([.clip, .imageSticker, .textSticker, .draw])
             .imageStickerContainerView(ImageStickerContainerView())
             .fontChooserContainerView(FontChooserContainerView())
             // Custom filter

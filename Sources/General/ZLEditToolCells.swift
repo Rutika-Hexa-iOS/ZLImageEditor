@@ -31,17 +31,25 @@ class ZLEditToolCell: UICollectionViewCell {
         didSet {
             switch toolType {
             case .draw:
-                icon.image = .zl.getImage("zl_drawLine")
-                icon.highlightedImage = .zl.getImage("zl_drawLine_selected")
+                icon.image = UIImage(named: "ic_Brush")
+                icon.highlightedImage = UIImage(named: "ic_Brush")
+//                icon.image = .zl.getImage("zl_drawLine")
+//                icon.highlightedImage = .zl.getImage("zl_drawLine_selected")
             case .clip:
-                icon.image = .zl.getImage("zl_clip")
-                icon.highlightedImage = .zl.getImage("zl_clip")
+                icon.image = UIImage(named: "ic_Crop")
+                icon.highlightedImage = UIImage(named: "ic_Crop")
+//                icon.image = .zl.getImage("zl_clip")
+//                icon.highlightedImage = .zl.getImage("zl_clip")
             case .imageSticker:
-                icon.image = .zl.getImage("zl_imageSticker")
-                icon.highlightedImage = .zl.getImage("zl_imageSticker")
+                icon.image = UIImage(named: "ic_Sticker")
+                icon.highlightedImage = UIImage(named: "ic_Sticker")
+//                icon.image = .zl.getImage("zl_imageSticker")
+//                icon.highlightedImage = .zl.getImage("zl_imageSticker")
             case .textSticker:
-                icon.image = .zl.getImage("zl_textSticker")
-                icon.highlightedImage = .zl.getImage("zl_textSticker")
+                icon.image = UIImage(named: "ic_Text")
+                icon.highlightedImage = UIImage(named: "ic_Text")
+//                icon.image = .zl.getImage("zl_textSticker")
+//                icon.highlightedImage = .zl.getImage("zl_textSticker")
             case .mosaic:
                 icon.image = .zl.getImage("zl_mosaic")
                 icon.highlightedImage = .zl.getImage("zl_mosaic_selected")
@@ -59,12 +67,24 @@ class ZLEditToolCell: UICollectionViewCell {
         }
     }
     
-    lazy var icon = UIImageView(frame: contentView.bounds)
+//    lazy var icon = UIImageView(frame: contentView.bounds)
+    var icon = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        icon.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(icon)
+        
+        NSLayoutConstraint.activate([
+            icon.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            icon.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            icon.widthAnchor.constraint(equalToConstant: 15),
+            icon.heightAnchor.constraint(equalToConstant: 15)
+        ])
+        contentView.backgroundColor = .white
+        contentView.layer.cornerRadius = 12
+//        contentView.addSubview(icon)
     }
     
     @available(*, unavailable)
